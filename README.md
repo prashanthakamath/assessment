@@ -36,7 +36,7 @@ Before you begin, ensure you have the following installed on your new machine:
 
 ## Step 4: Install Project Dependencies
 
-1. Inside the project folder, run:
+1. Inside the project repository, run:
    npm install
 
 ## Step 5: Start the React development srver
