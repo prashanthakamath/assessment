@@ -6,8 +6,7 @@ import App from "./App";
 import store from "./redux/store";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// Ensure the element with id "root" exists
-const root = ReactDOM.createRoot(document.getElementById("root")); // This must match the id in your index.html
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={store}>

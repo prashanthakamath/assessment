@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import CertificationForm from "./components/CertificationForm/CertificationForm";
 import SavedCertifications from "./components/SavedCertifications/SavedCertifications";

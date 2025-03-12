@@ -1,4 +1,3 @@
-// reducer.js
 import { ADD_CERTIFICATION } from "./actions";
 
 const initialState = {
@@ -10,7 +9,7 @@ const certificationReducer = (state = initialState, action) => {
     case ADD_CERTIFICATION:
       if (state.certifications.length >= 5) {
         alert("You can only save up to 5 certifications.");
-        return state; // Do nothing if there are already 5 certifications
+        return state;
       }
       return {
         ...state,

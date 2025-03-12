@@ -1,4 +1,3 @@
-// CertificationForm.js
 import React, { useState } from "react";
 import "./CertificationForm.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,19 +9,16 @@ const CertificationForm = () => {
   const dispatch = useDispatch();
   const certifications = useSelector((state) => state.certifications);
 
-  // State for form fields
   const [certificationName, setCertificationName] = useState("");
   const [issuer, setIssuer] = useState("");
   const [file, setFile] = useState(null);
 
-  // State for validation errors
   const [errors, setErrors] = useState({
     certificationName: "",
     issuer: "",
     file: "",
   });
 
-  // Validate form fields
   const validateForm = () => {
     const newErrors = { certificationName: "", issuer: "", file: "" };
     let isValid = true;
@@ -58,17 +54,14 @@ const CertificationForm = () => {
     }
 
     if (validateForm()) {
-      // Create the certification object
       const newCertification = {
         certificationName,
         issuer,
         file,
       };
 
-      // Dispatch action to save the certification
       dispatch(addCertification(newCertification));
 
-      // Reset form
       setCertificationName("");
       setIssuer("");
       setFile(null);
@@ -77,16 +70,13 @@ const CertificationForm = () => {
 
   return (
     <div className="p-4 bg-white row col-md-12 mx-auto">
-      {/* Outer container for heading */}
       <div className="p-4 mb-3">
         <h2 className="text-center no-padding">Skills-Based Certifications</h2>
         <p className="text-center">(You can add up to 5 certifications)</p>
       </div>
 
-      {/* Inner container for form (without <form> tag) */}
       <div className="p-4 border shadow-sm bg-white rounded mb-4 row col-md-8 mx-auto">
         <Row>
-          {/* Certification Name Field */}
           <Col md={6} className="mb-3">
             <div>
               <label htmlFor="certificationName">Certification Name</label>
@@ -103,7 +93,6 @@ const CertificationForm = () => {
             </div>
           </Col>
 
-          {/* Issuer Field */}
           <Col md={6} className="mb-3">
             <div>
               <label htmlFor="issuer">Issuer</label>
@@ -119,7 +108,6 @@ const CertificationForm = () => {
             </div>
           </Col>
 
-          {/* File Upload Field */}
           <Col md={12} className="mb-12">
             <div className="choose-file">
               <input
@@ -134,7 +122,6 @@ const CertificationForm = () => {
             </div>
           </Col>
 
-          {/* Submit Button */}
           <Col md={12} className="text-center">
             <Button variant="primary" onClick={handleSubmit}>
               SAVE CERTIFICATION
